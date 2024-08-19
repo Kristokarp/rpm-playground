@@ -79,8 +79,8 @@ function App() {
       >
         <RpmIframe
           style={{
+            width: "1100px",
             height: "800px",
-            width: "100%",
             border: "0",
             maxWidth: "100%",
           }}
