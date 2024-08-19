@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  background-color: #32333e;
+  border: 0;
+}
+
+#root {
+  max-width: 100%;
+  width: 100%;
+}
