@@ -7,7 +7,7 @@ function App() {
     setEvents((prev) => [...prev, event]);
   };
 
-  const [baseUrl, setBaseUrl] = useState("https://demo.readyplayer.me/avatar");
+  const [baseUrl, setBaseUrl] = useState("https://next-gen-api.readyplayer.me/nova-editor");
   const [token, setToken] = useState("");
   const [avatarId, setAvatarId] = useState("");
 
