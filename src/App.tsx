@@ -27,11 +27,14 @@ function App() {
           flexDirection: "column",
           alignItems: "center",
           gap: "16px",
+          paddingRight: "32px",
+          paddingLeft: "32px",
         }}
       >
-        <div style={{ display: "flex", gap: "8px" }}>
+        <div style={{ display: "flex", gap: "8px", width: "100%" }}>
           <div>url</div>
           <input
+            style={{ width: "100%" }}
             type="text"
             value={baseUrl}
             onChange={(e) => setBaseUrl(e.target.value)}
