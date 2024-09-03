@@ -19,7 +19,6 @@ export type AvatarCreatorConfig = {
   clearCache?: boolean;
   bodyType?: BodyType;
   quickStart?: boolean;
-  language?: Language;
   token?: string;
   avatarId?: string;
 };

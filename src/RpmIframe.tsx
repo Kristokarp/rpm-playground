@@ -8,9 +8,7 @@ const RPM_TARGET = "readyplayerme";
 const IFRAME_READY_EVENT = "v1.frame.ready";
 
 type Props = {
-  subdomain: string;
-  baseDomain?: string;
-  useHttps?: boolean;
+  baseUrl: string;
   className?: string;
   style?: CSSProperties;
   config?: AvatarCreatorConfig;
@@ -19,16 +17,14 @@ type Props = {
 };
 
 export const RpmIframe: FC<Props> = ({
-  subdomain,
-  baseDomain,
-  useHttps,
+  baseUrl,
   className,
   style,
   config,
   onEventReceived,
 }) => {
   const frameRef = useRef<HTMLIFrameElement | null>(null);
-  const url = useAvatarCreatorUrl(subdomain, config, baseDomain, useHttps);
+  const url = useAvatarCreatorUrl(baseUrl, config);
 
   const subscribeToAvatarCreatorEvents = () => {
     if (!frameRef.current?.contentWindow) return;

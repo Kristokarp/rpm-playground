@@ -7,9 +7,7 @@ function App() {
     setEvents((prev) => [...prev, event]);
   };
 
-  const [subdomain, setSubdomain] = useState("demo");
-  const [baseDomain, setBaseDomain] = useState(".readyplayer.me");
-  const [useHttps, setUseHttps] = useState(true);
+  const [baseUrl, setBaseUrl] = useState("https://demo.readyplayer.me/avatar");
   const [token, setToken] = useState("");
   const [avatarId, setAvatarId] = useState("");
 
@@ -32,27 +30,11 @@ function App() {
         }}
       >
         <div style={{ display: "flex", gap: "8px" }}>
-          <div>Subdomain</div>
+          <div>url</div>
           <input
             type="text"
-            value={subdomain}
-            onChange={(e) => setSubdomain(e.target.value)}
-          />
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
-          <div>Basedomain</div>
-          <input
-            type="text"
-            value={baseDomain}
-            onChange={(e) => setBaseDomain(e.target.value)}
-          />
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
-          <div>Use HTTPS</div>
-          <input
-            type="checkbox"
-            checked={useHttps}
-            onChange={(e) => setUseHttps(e.target.checked)}
+            value={baseUrl}
+            onChange={(e) => setBaseUrl(e.target.value)}
           />
         </div>
 
@@ -84,10 +66,8 @@ function App() {
             border: "0",
             maxWidth: "100%",
           }}
-          subdomain={subdomain}
-          baseDomain={baseDomain}
-          useHttps={useHttps}
-          config={{ language: "en", clearCache: true, token, avatarId }}
+          baseUrl={baseUrl}
+          config={{ clearCache: true, token, avatarId }}
           onEventReceived={onEvent}
         />
       </div>

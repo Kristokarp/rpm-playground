@@ -2,18 +2,12 @@ import { AvatarCreatorConfig } from "./types";
 import { useMemo } from "react";
 
 export const useAvatarCreatorUrl = (
-  subdomain: string,
-  config?: AvatarCreatorConfig,
-  baseDomain?: string,
-  useHttps = true
+  baseUrl: string,
+  config?: AvatarCreatorConfig
 ): string => {
   return useMemo(() => {
-    let url = `${useHttps ? "https" : "http"}://${subdomain}${
-      baseDomain ?? ".readyplayer.me"
-    }`;
-
-    if (config?.language) url += `/${config.language}`;
-    url += `/avatar?frameApi&source=rpm-playground`;
+    let url = baseUrl;
+    url += "?frameApi";
     if (config?.clearCache) url += "&clearCache";
     if (config?.quickStart) url += "&quickStart";
     if (config?.bodyType) url += `&bodyType=${config?.bodyType}`;
@@ -21,5 +15,5 @@ export const useAvatarCreatorUrl = (
     if (config?.avatarId) url += `&id=${config?.avatarId}`;
 
     return url;
-  }, [subdomain, baseDomain, config, useHttps]);
+  }, [baseUrl, config]);
 };
