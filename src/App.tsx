@@ -7,7 +7,9 @@ function App() {
     setEvents((prev) => [...prev, event]);
   };
 
-  const [baseUrl, setBaseUrl] = useState("https://next-gen-api.readyplayer.dev/nova-editor");
+  const [baseUrl, setBaseUrl] = useState(
+    "https://next-gen-api.readyplayer.dev/nova-editor"
+  );
   const [token, setToken] = useState("");
   const [avatarId, setAvatarId] = useState("");
 
@@ -70,7 +72,7 @@ function App() {
             maxWidth: "100%",
           }}
           baseUrl={baseUrl}
-          config={{ clearCache: true, token, avatarId }}
+          config={{ token, avatarId }}
           onEventReceived={onEvent}
         />
       </div>
